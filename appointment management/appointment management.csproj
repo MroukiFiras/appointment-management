@@ -32,6 +32,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,12 +51,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="homeForm1.cs">
+    <Compile Include="AddPatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="homeForm1.Designer.cs">
-      <DependentUpon>homeForm1.cs</DependentUpon>
+    <Compile Include="AddPatient.Designer.cs">
+      <DependentUpon>AddPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Appointment.cs" />
+    <Compile Include="HomeDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeDoctor.Designer.cs">
+      <DependentUpon>HomeDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="homeSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="homeSec.Designer.cs">
+      <DependentUpon>homeSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListPatient.Designer.cs">
+      <DependentUpon>ListPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginForm.Designer.cs">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs" />
     <Compile Include="splashForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +91,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="type.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="type.Designer.cs">
+      <DependentUpon>type.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddPatient.resx">
+      <DependentUpon>AddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeDoctor.resx">
+      <DependentUpon>HomeDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="homeSec.resx">
+      <DependentUpon>homeSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListPatient.resx">
+      <DependentUpon>ListPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginForm.resx">
+      <DependentUpon>loginForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -71,6 +123,9 @@
     </Compile>
     <EmbeddedResource Include="splashForm1.resx">
       <DependentUpon>splashForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="type.resx">
+      <DependentUpon>type.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -84,6 +139,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="medical_1512910.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

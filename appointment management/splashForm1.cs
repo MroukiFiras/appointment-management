@@ -25,12 +25,14 @@ namespace appointment_management
             if (progressBar1.Value == 100)
             {
                 timer1.Enabled = false;
-                homeForm1 homeForm1 = new homeForm1();
-                homeForm1.Show();
+                type typeForm = new type();
+                typeForm.Show();
                 this.Hide();
             }
 
 
         }
+
+
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace appointment_management
 {
-    public partial class homeForm1 : Form
+    public partial class HomeDoctor : Form
     {
-        public homeForm1()
+        public HomeDoctor()
         {
             InitializeComponent();
         }
