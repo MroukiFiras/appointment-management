@@ -46,10 +46,10 @@ namespace appointment_management
                 emailTxt.Focus();
                 return;
             }
+
             Program.tablePatient.Add(newPatient);
-            ListPatient listPatient = new ListPatient();
-            listPatient.Show();
-            this.Hide();
+
+           
 
 
         }

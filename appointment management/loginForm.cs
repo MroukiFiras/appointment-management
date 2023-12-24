@@ -42,14 +42,20 @@ namespace appointment_management
             else if (checkPassword == "secretary") 
             {
                 homeSec homeForm1 = new homeSec();
+
+                //set name of the doctor in the dashboard of secretary
                 Program.name = checkUsername;
+
                 homeForm1.Show();
                 this.Hide();
             }
             else if (checkPassword == "doctor")
             {
                 HomeDoctor homeDoctor = new HomeDoctor();
+
+                //set name of the doctor in the dashboard of doctor
                 Program.name = checkUsername;
+
                 homeDoctor.Show();
                 this.Hide();
             }
