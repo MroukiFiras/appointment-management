@@ -12,7 +12,7 @@ namespace appointment_management
         /// The main entry point for the application.
         /// </summary>
         public static List<Patient> tablePatient = new List<Patient>();
-
+        public static String name;
         [STAThread]
         static void Main()
         {

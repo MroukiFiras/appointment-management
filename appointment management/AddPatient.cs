@@ -31,16 +31,18 @@ namespace appointment_management
             string adress = adrTxt.Text;
             string phoneNumber = phoneNumberTxt.Text.Trim();
             string email = emailTxt.Text.Trim();
+
             Patient newPatient = new Patient(cin,firstName,lastName,dateOfBirth,gendre,adress, phoneNumber, email);
+
             if (!newPatient.IsPhoneNumberValid(phoneNumber))
             {
-                MessageBox.Show("Please enter a valid phone number.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(" Please enter a valid phone number.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 phoneNumberTxt.Focus();
                 return;
             }
             if (!newPatient.IsEmailValid(email))
             {
-                MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(" Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 emailTxt.Focus();
                 return;
             }

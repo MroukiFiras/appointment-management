@@ -19,6 +19,7 @@ namespace appointment_management
             InitializeComponent();
             WelcomeMessage = "Welcome User";
         }
+
         private void loginForm_Load(object sender, EventArgs e)
         {
             this.BeginInvoke(new Action(() =>
@@ -32,6 +33,7 @@ namespace appointment_management
         {
             string checkPassword = passwordtxt.Text;
             string checkUsername = usernametxt.Text;
+
             if ((checkUsername == "") || (checkPassword == ""))
             {
                 MessageBox.Show("You must enter both username and password to log in.", "Incomplete Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -40,12 +42,14 @@ namespace appointment_management
             else if (checkPassword == "secretary") 
             {
                 homeSec homeForm1 = new homeSec();
+                Program.name = checkUsername;
                 homeForm1.Show();
                 this.Hide();
             }
             else if (checkPassword == "doctor")
             {
                 HomeDoctor homeDoctor = new HomeDoctor();
+                Program.name = checkUsername;
                 homeDoctor.Show();
                 this.Hide();
             }
