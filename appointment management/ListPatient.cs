@@ -16,7 +16,7 @@ namespace appointment_management
         {
             InitializeComponent();
         }
-        DataTable table = new DataTable();
+        public static DataTable table = new DataTable();
 
 
         private void ListPatient_Load(object sender, EventArgs e)
@@ -30,6 +30,7 @@ namespace appointment_management
             table.Columns.Add("Address", typeof(string));
             table.Columns.Add("PhoneNumber", typeof(string));
             table.Columns.Add("Email", typeof(string));
+            table.Columns.Add("DateAdded", typeof(DateTime));
             foreach (Patient newPatient in Program.tablePatient)
             {
                 DataRow row = table.NewRow();
@@ -41,19 +42,18 @@ namespace appointment_management
                 row["Address"] = newPatient.adress;
                 row["PhoneNumber"] = newPatient.phoneNumber;
                 row["Email"] = newPatient.email;
-
-
+                row["DateAdded"] = DateTime.Today;
                 table.Rows.Add(row);
             }
-
             dataGridView1.DataSource = table;
         }
-
         private void label2_Click(object sender, EventArgs e)
         {
             homeSec homeSec = new homeSec();
             homeSec.Show();
             this.Close();
         }
+
+
     }
 }

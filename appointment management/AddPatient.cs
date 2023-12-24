@@ -19,39 +19,80 @@ namespace appointment_management
         {
             InitializeComponent();
         }
-
-
         private void addbtn_Click(object sender, EventArgs e)
         {
-            int cin = Convert.ToInt32(cinTxt.Text);
+            if (!ValidateInput())
+            {
+                return;
+            }
+            AddNewPatient();
+
+            ListPatient listPatient = new ListPatient();
+            listPatient.Show();
+            this.Hide();
+        }
+        // Method to validate input data
+        private bool ValidateInput()
+        {
+            int cin;
+            if (!int.TryParse(cinTxt.Text, out cin))
+            {
+                MessageBox.Show("Please enter a valid CIN (numeric value).", "Invalid CIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cinTxt.Focus();
+                return false;
+            }
+            if (Program.tablePatient.Any(patient => patient.cin == cin))
+            {
+                MessageBox.Show($"The CIN '{cin}' already exists.", "Duplicate CIN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cinTxt.Clear();
+                cinTxt.Focus();
+                return false;
+            }
             string firstName = firstNameTxt.Text;
             string lastName = lastNameTxt.Text;
-            DateTime dateOfBirth = dateOfbirth.Value;
             string gendre = comboBox1.Text;
             string adress = adrTxt.Text;
             string phoneNumber = phoneNumberTxt.Text.Trim();
             string email = emailTxt.Text.Trim();
-            Patient newPatient = new Patient(cin,firstName,lastName,dateOfBirth,gendre,adress, phoneNumber, email);
+
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) ||
+                string.IsNullOrEmpty(gendre) || string.IsNullOrEmpty(adress) ||
+                string.IsNullOrEmpty(phoneNumber) || string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Please fill in all the required fields.", "Empty Fields", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+            Patient newPatient = new Patient(cin, firstName, lastName, dateOfbirth.Value, gendre, adress, phoneNumber, email);
+
             if (!newPatient.IsPhoneNumberValid(phoneNumber))
             {
                 MessageBox.Show("Please enter a valid phone number.", "Invalid Phone Number", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 phoneNumberTxt.Focus();
-                return;
+                return false;
             }
+
             if (!newPatient.IsEmailValid(email))
             {
                 MessageBox.Show("Please enter a valid email address.", "Invalid Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 emailTxt.Focus();
-                return;
+                return false;
             }
-            Program.tablePatient.Add(newPatient);
-            ListPatient listPatient = new ListPatient();
-            listPatient.Show();
-            this.Hide();
-
-
+            return true;
         }
-
+        // Method to add a new patient
+        private void AddNewPatient()
+        {
+            int cin = int.Parse(cinTxt.Text);
+            string firstName = firstNameTxt.Text;
+            string lastName = lastNameTxt.Text;
+            string gendre = comboBox1.Text;
+            string adress = adrTxt.Text;
+            string phoneNumber = phoneNumberTxt.Text.Trim();
+            string email = emailTxt.Text.Trim();
+            Patient newPatient = new Patient(cin, firstName, lastName, dateOfbirth.Value, gendre, adress, phoneNumber, email);
+            Program.tablePatient.Add(newPatient);
+        }
         private void lblBackHome_Click(object sender, EventArgs e)
         {
             homeSec homeSec = new homeSec();

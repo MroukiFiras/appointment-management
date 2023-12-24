@@ -16,17 +16,14 @@ namespace appointment_management
         {
             InitializeComponent();
         }
-
         private void panelSec_Click(object sender, EventArgs e)
         {
             OpenLoginForm("Welcome Secretary");
         }
-
         private void panelDoctor_Click(object sender, EventArgs e)
         {
             OpenLoginForm("Welcome Doctor");
         }
-
         private void OpenLoginForm(string welcomeMessage)
         {
             this.Hide();
@@ -35,6 +32,5 @@ namespace appointment_management
             loginForm.FormClosed += (s, args) => this.Show();
             loginForm.ShowDialog();
         }
-
     }
 }

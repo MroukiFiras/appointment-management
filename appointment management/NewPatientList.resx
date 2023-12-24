@@ -117,52 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="bindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAUZJREFUaEPtmU1KQ0EQhN8xNJ7In/NEt4rHUs8kiRtXWjUQEAl539PEarA/qMVA
-        v6oaJln11DTNj7mRnqU36SOsreQu19IiHqV9hhX0ICH8Ev7gXVpLKymNO9xK7uRuV9IsL5KH/WE13Mnd
-        nsZpBv8ePXw+TrU4k9xtM04zeNCqCu7XF/kj+iK/JeYXC4Zgv1gwBPvFgiHYLxYMwX6xYAj2iwVDsF8s
-        GIL9YsEQ7BcLhmC/WDAE+5HB3cypdAgyM1hidiodgswM8CAk5hcLhmC/WDAE+8WCIdgvFgzBfrFgCPaL
-        BUOwXywYgv1iwRDsFwuGYL9YMAT7HTv42PRFqvH/LuIligcrrNy+cyG52+s4zeDtqYcrrt7uJHdDqzev
-        gD3sxaMvU3EZeikhvAL2BxV1Ly3CK2A/4e4/k5Q7uAt+iaZpvjJNn+oyjNopeRR3AAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>
