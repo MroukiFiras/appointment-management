@@ -1340,6 +1340,15 @@
         mw0/iOoxT/fWCuf0MJYJ6MwBeigYL9VEcMthfzMUIGSZSpQysIcRwZbLuH7Df//Z
 </value>
   </data>
+  <data name="panelClose.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAKhJREFUSEvtlE0KhDAMhXsJZbz/ScaNzI8bXXgcfU8IhKGmMTrgwg8etSXJKyY0
+        3VySFvpC9brzwdgeeq67Am9ohkbIY8IYxjLnxYMSFTRATJigBtriN/YBufCYhIsLlsnh4kLO5LTigm4i
+        V/29Z9JM9K1Pu7kmZ2BN1y7++otyDc01PoQ1LYdNrOJC2MRTXAiZfCAmeJuoh4APZZEOijzXzGHuzaVI
+        aQEzKlFQEBvYIwAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIABrSAAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAAAFv

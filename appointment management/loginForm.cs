@@ -57,5 +57,9 @@ namespace appointment_management
                 passwordtxt.Text = "";
             }
         }
+        private void panelClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

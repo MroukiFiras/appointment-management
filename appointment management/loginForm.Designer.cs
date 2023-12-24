@@ -37,6 +37,8 @@
             this.passwordtxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panelClose = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblWelcome
@@ -65,6 +67,7 @@
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.panelClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(518, 0);
             this.panel1.Name = "panel1";
@@ -122,6 +125,16 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Copyright © 2023 . All Rights Reserved By FRISTO GROUP";
             // 
+            // panelClose
+            // 
+            this.panelClose.BackColor = System.Drawing.Color.Transparent;
+            this.panelClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelClose.BackgroundImage")));
+            this.panelClose.Location = new System.Drawing.Point(436, 0);
+            this.panelClose.Name = "panelClose";
+            this.panelClose.Size = new System.Drawing.Size(38, 35);
+            this.panelClose.TabIndex = 1;
+            this.panelClose.Click += new System.EventHandler(this.panelClose_Click);
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -142,6 +155,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "loginForm";
             this.Load += new System.EventHandler(this.loginForm_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +171,6 @@
         private System.Windows.Forms.TextBox passwordtxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panelClose;
     }
 }

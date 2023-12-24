@@ -32,5 +32,12 @@ namespace appointment_management
             loginForm.FormClosed += (s, args) => this.Show();
             loginForm.ShowDialog();
         }
+
+        private void panelClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }

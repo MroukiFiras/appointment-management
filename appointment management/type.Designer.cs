@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(type));
             this.panelSec = new System.Windows.Forms.Panel();
             this.panelDoctor = new System.Windows.Forms.Panel();
+            this.panelClose = new System.Windows.Forms.Panel();
+            this.panelDoctor.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelSec
@@ -50,12 +52,23 @@
             this.panelDoctor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelDoctor.BackgroundImage")));
             this.panelDoctor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panelDoctor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelDoctor.Controls.Add(this.panelClose);
             this.panelDoctor.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelDoctor.Location = new System.Drawing.Point(535, 0);
             this.panelDoctor.Name = "panelDoctor";
             this.panelDoctor.Size = new System.Drawing.Size(516, 592);
             this.panelDoctor.TabIndex = 1;
             this.panelDoctor.Click += new System.EventHandler(this.panelDoctor_Click);
+            // 
+            // panelClose
+            // 
+            this.panelClose.BackColor = System.Drawing.Color.Transparent;
+            this.panelClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelClose.BackgroundImage")));
+            this.panelClose.Location = new System.Drawing.Point(486, -2);
+            this.panelClose.Name = "panelClose";
+            this.panelClose.Size = new System.Drawing.Size(38, 35);
+            this.panelClose.TabIndex = 0;
+            this.panelClose.Click += new System.EventHandler(this.panelClose_Click);
             // 
             // type
             // 
@@ -69,6 +82,7 @@
             this.Name = "type";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "type";
+            this.panelDoctor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -77,5 +91,6 @@
 
         private System.Windows.Forms.Panel panelSec;
         private System.Windows.Forms.Panel panelDoctor;
+        private System.Windows.Forms.Panel panelClose;
     }
 }
