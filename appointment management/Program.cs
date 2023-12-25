@@ -12,6 +12,12 @@ namespace appointment_management
         /// The main entry point for the application.
         /// </summary>
         public static List<Patient> tablePatient = new List<Patient>();
+        public static List<AppointmentConfirmation> tableConfirmation = new List<AppointmentConfirmation>();
+        public static AppointmentConfirmation GetConfirmationStatus(Patient patient)
+        {
+            return tableConfirmation.FirstOrDefault(c => c.Patient == patient);
+        }
+
 
         [STAThread]
         static void Main()

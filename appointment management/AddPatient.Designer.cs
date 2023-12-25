@@ -133,6 +133,7 @@
             this.dateOfbirth.Name = "dateOfbirth";
             this.dateOfbirth.Size = new System.Drawing.Size(320, 31);
             this.dateOfbirth.TabIndex = 25;
+            this.dateOfbirth.Value = new System.DateTime(2023, 12, 25, 0, 0, 0, 0);
             // 
             // label2
             // 

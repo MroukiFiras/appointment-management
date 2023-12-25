@@ -12,16 +12,20 @@ namespace appointment_management
 {
     public partial class NewPatientList : Form
     {
+        private DataTable todayPatientsTable;
         public NewPatientList()
         {
             InitializeComponent();
+            
         }
-        Dictionary<int, Color> rowColors = new Dictionary<int, Color>();
-
         private void NewPatientList_Load(object sender, EventArgs e)
         {
+            LoadPatientData();
+        }
+        private void LoadPatientData()
+        {
             DataTable patientTable = ListPatient.table;
-            DataTable todayPatientsTable = patientTable.Clone();
+            todayPatientsTable = patientTable.Clone();
             if (!todayPatientsTable.Columns.Contains("Confirmation"))
             {
                 todayPatientsTable.Columns.Add("Confirmation", typeof(string));
@@ -31,30 +35,19 @@ namespace appointment_management
                 .Where(row => row.Field<DateTime>("DateAdded").Date == today);
             foreach (var patient in todayPatients)
             {
-                todayPatientsTable.ImportRow(patient);
+                DataRow newRow = todayPatientsTable.Rows.Add(patient.ItemArray);
+                int cin = int.Parse(patient["CIN"].ToString());
+                AppointmentConfirmation confirmation = Program.tableConfirmation
+                    .FirstOrDefault(c => c.Patient.cin == cin);
+
+                if (confirmation != null)
+                {
+                    newRow["Confirmation"] = confirmation.ConfirmationStatus;
+                }
             }
             dataGridView1.DataSource = todayPatientsTable;
+            UpdateRowColors();
         }
-        private void lblBackHome_Click(object sender, EventArgs e)
-        {
-            HomeDoctor homeDoctor = new HomeDoctor();
-            homeDoctor.Show();
-            this.Close();
-        }
-        // UpdateConfirmationAndColor method sets the "Confirmation" cell value and updates the row color based on the confirmation value
-        private void UpdateConfirmationAndColor(string confirmationValue, DataGridViewRow selectedRow)
-        {
-            selectedRow.Cells["Confirmation"].Value = confirmationValue; // Set the value in the "Confirmation" cell
-            if (confirmationValue == "Yes")
-            {
-                selectedRow.DefaultCellStyle.BackColor = Color.Green; // Green for "Yes"
-            }
-            else if (confirmationValue == "No")
-            {
-                selectedRow.DefaultCellStyle.BackColor = Color.Red; // Red for "No"
-            }
-        }
-        // UpdateRowColors method loops through rows and updates row colors based on the "Confirmation" cell value
         private void UpdateRowColors()
         {
             foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -62,55 +55,72 @@ namespace appointment_management
                 string confirmationValue = row.Cells["Confirmation"].Value?.ToString();
                 if (confirmationValue == "Yes")
                 {
-                    rowColors[row.Index] = Color.Green; 
                     row.DefaultCellStyle.BackColor = Color.Green;
                 }
                 else if (confirmationValue == "No")
                 {
-                    rowColors[row.Index] = Color.Red; 
-                    row.DefaultCellStyle.BackColor = Color.Red; 
+                    row.DefaultCellStyle.BackColor = Color.Red;
                 }
             }
         }
-        // Method to update DataGridView colors after refresh or data reorder
-        private void UpdateDataGridViewColors()
-        {
-            foreach (var pair in rowColors)
-            {
-                dataGridView1.Rows[pair.Key].DefaultCellStyle.BackColor = pair.Value;
-            }
-        }
-        // HandleAppointmentConfirmation method handles the appointment confirmation logic
         private void HandleAppointmentConfirmation(DataGridViewRow selectedRow)
         {
-            string firstName = selectedRow.Cells["FirstName"].Value?.ToString();
-            string lastName = selectedRow.Cells["LastName"].Value?.ToString();
-            if (!string.IsNullOrEmpty(firstName) && !string.IsNullOrEmpty(lastName))
+            int cin;
+            bool isCinValid = int.TryParse(selectedRow.Cells["CIN"].Value?.ToString(), out cin);
+            if (isCinValid)
             {
-                if (string.IsNullOrEmpty(selectedRow.Cells["Confirmation"].Value?.ToString()))
+                Patient patient = Program.tablePatient.FirstOrDefault(p => p.cin == cin);
+                if (patient != null)
                 {
-                    string patientName = $"{firstName} {lastName}";
-                    DialogResult dialogResult = MessageBox.Show(
-                        $"Give an appointment soon to {patientName}?",
-                        "Appointment Confirmation",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question
-                    );
-                    if (dialogResult == DialogResult.Yes)
+                    string confirmationValue = selectedRow.Cells["Confirmation"].Value?.ToString();
+
+                    if (string.IsNullOrEmpty(confirmationValue))
                     {
-                        UpdateConfirmationAndColor("Yes", selectedRow);
-                        MessageBox.Show("Appointment scheduled soon.", "Appointment Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        string patientName = $"{patient.firstName} {patient.lastName}";
+                        DialogResult dialogResult = MessageBox.Show(
+                            $"Give an appointment soon to {patientName}?",
+                            "Appointment Confirmation",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question
+                        );
+                        if (dialogResult == DialogResult.Yes || dialogResult == DialogResult.No)
+                        {
+                            AppointmentConfirmation confirmation = Program.tableConfirmation.FirstOrDefault(c => c.Patient.cin == cin);
+                            if (confirmation == null)
+                            {
+                                confirmation = new AppointmentConfirmation(patient);
+                                Program.tableConfirmation.Add(confirmation);
+                            }
+                            string confirmationStatus = (dialogResult == DialogResult.Yes) ? "Yes" : "No";
+                            confirmation.ConfirmAppointment(confirmationStatus);
+
+                            UpdateConfirmationAndColor(confirmationStatus, selectedRow);
+                            MessageBox.Show("Appointment scheduled soon.", "Appointment Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            UpdateRowColors();
+                        }
                     }
-                    else if (dialogResult == DialogResult.No)
+                    else
                     {
-                        UpdateConfirmationAndColor("No", selectedRow);
+                        MessageBox.Show("Already responded.", "Already Responded", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-                    UpdateRowColors();
                 }
-                else
-                {
-                    MessageBox.Show("Already responded.", "Already Responded", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid CIN.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void UpdateConfirmationAndColor(string confirmationValue, DataGridViewRow selectedRow)
+        {
+            selectedRow.Cells["Confirmation"].Value = confirmationValue;
+            if (confirmationValue == "Yes")
+            {
+                selectedRow.DefaultCellStyle.BackColor = Color.Green;
+            }
+            else if (confirmationValue == "No")
+            {
+                selectedRow.DefaultCellStyle.BackColor = Color.Red;
             }
         }
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -118,15 +128,13 @@ namespace appointment_management
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                HandleAppointmentConfirmation(selectedRow); // Call method to handle appointment confirmation
+                HandleAppointmentConfirmation(selectedRow);
             }
         }
-        private void RefreshDataAndColors()
-        {
-            UpdateRowColors();
-            // Perform data refresh here (e.g., reassigning data source or updating DataGridView)
-            // After refreshing data, call UpdateDataGridViewColors() to reapply row colors
-            UpdateDataGridViewColors();
+        private void lblBackHome_Click(object sender, EventArgs e)
+        {            HomeDoctor homeDoctor = new HomeDoctor();
+            homeDoctor.Show();
+            this.Close();
         }
     }
 }

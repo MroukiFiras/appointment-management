@@ -59,6 +59,7 @@
       <DependentUpon>AddPatient.cs</DependentUpon>
     </Compile>
     <Compile Include="Appointment.cs" />
+    <Compile Include="AppointmentConfirmation.cs" />
     <Compile Include="HomeDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
