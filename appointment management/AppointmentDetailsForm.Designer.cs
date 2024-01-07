@@ -42,11 +42,14 @@
             this.addbtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnAllApp = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 318);
             this.panel1.Name = "panel1";
@@ -117,9 +120,8 @@
             this.lblAppointementId.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAppointementId.Location = new System.Drawing.Point(259, 69);
             this.lblAppointementId.Name = "lblAppointementId";
-            this.lblAppointementId.Size = new System.Drawing.Size(62, 22);
+            this.lblAppointementId.Size = new System.Drawing.Size(0, 22);
             this.lblAppointementId.TabIndex = 55;
-            this.lblAppointementId.Text = "label6";
             // 
             // lblCin
             // 
@@ -127,9 +129,8 @@
             this.lblCin.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCin.Location = new System.Drawing.Point(259, 115);
             this.lblCin.Name = "lblCin";
-            this.lblCin.Size = new System.Drawing.Size(62, 22);
+            this.lblCin.Size = new System.Drawing.Size(0, 22);
             this.lblCin.TabIndex = 56;
-            this.lblCin.Text = "label7";
             // 
             // lblName
             // 
@@ -137,9 +138,8 @@
             this.lblName.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.Location = new System.Drawing.Point(259, 159);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(62, 22);
+            this.lblName.Size = new System.Drawing.Size(0, 22);
             this.lblName.TabIndex = 57;
-            this.lblName.Text = "label8";
             // 
             // addbtn
             // 
@@ -180,6 +180,18 @@
             this.btnAllApp.UseVisualStyleBackColor = false;
             this.btnAllApp.Click += new System.EventHandler(this.btnAllApp_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(215, 249);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(366, 18);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "Copyright © 2023 . All Rights Reserved By FRISTO GROUP";
+            // 
             // AppointmentDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,6 +214,8 @@
             this.Name = "AppointmentDetailsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Appointment Details";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +236,6 @@
         private System.Windows.Forms.Button addbtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnAllApp;
+        private System.Windows.Forms.Label label7;
     }
 }

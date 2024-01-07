@@ -12,19 +12,10 @@ namespace appointment_management
 {
     public partial class appointment_Form : Form
     {
-        
         public appointment_Form()
         {
             InitializeComponent();
-
-        }
-
-
-        private void lblBackHome_Click(object sender, EventArgs e)
-        {
-            homeSec homeSec = new homeSec();
-            homeSec.Show();
-            this.Close();
+  
         }
         private void appointment_Form_Load(object sender, EventArgs e)
         {

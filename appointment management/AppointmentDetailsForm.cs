@@ -21,23 +21,20 @@ namespace appointment_management
             lblCin.Text = cin.ToString();
             lblName.Text = fullName;
 
-            _cin = cin; // Store the cin value for later use
+            _cin = cin; 
         }
-
         private void label6_Click(object sender, EventArgs e)
         {
             homeSec homeSec = new homeSec();
             homeSec.Show();
             this.Hide();
         }
-
         private void btnAllApp_Click(object sender, EventArgs e)
         {
             appointment_Form frm = new appointment_Form();
             frm.Show();
             this.Hide();
         }
-
         private void addbtn_Click(object sender, EventArgs e)
         {
             Appointment newAppointment = new Appointment(GenerateAppointmentId(), DateTime.Now, GetPatientByCIN(_cin));
@@ -52,8 +49,6 @@ namespace appointment_management
                 {
                     Program.tableAppointment.Add(newAppointment);
                     MessageBox.Show("Appointment added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    
                 }
             }
             else
@@ -61,13 +56,11 @@ namespace appointment_management
                 MessageBox.Show("Please select a patient to add an appointment.", "No Patient Selected", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
         private int GenerateAppointmentId()
         {
             Random random = new Random();
             return random.Next(100, 1000);
         }
-
         private Patient GetPatientByCIN(int cin)
         {
             return Program.tablePatient.FirstOrDefault(p => p.cin == cin);
