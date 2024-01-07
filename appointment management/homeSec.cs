@@ -37,5 +37,12 @@ namespace appointment_management
             typeForm.Show();
             this.Close();
         }
+
+        private void appToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            appointment_Form appointment = new appointment_Form();
+            appointment.Show();
+            this.Close();
+        }
     }
 }

@@ -13,6 +13,8 @@ namespace appointment_management
         /// </summary>
         public static List<Patient> tablePatient = new List<Patient>();
         public static List<AppointmentConfirmation> tableConfirmation = new List<AppointmentConfirmation>();
+        public static List<Appointment> tableAppointment = new List<Appointment>();
+
         public static AppointmentConfirmation GetConfirmationStatus(Patient patient)
         {
             return tableConfirmation.FirstOrDefault(c => c.Patient == patient);

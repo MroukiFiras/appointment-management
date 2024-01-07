@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPatient));
             this.lblCin = new System.Windows.Forms.Label();
             this.cinTxt = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.firstNameLbl = new System.Windows.Forms.Label();
             this.firstNameTxt = new System.Windows.Forms.TextBox();
             this.lastNameLbl = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblBackHome = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblCin
@@ -69,16 +69,6 @@
             this.cinTxt.Name = "cinTxt";
             this.cinTxt.Size = new System.Drawing.Size(320, 31);
             this.cinTxt.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.ForeColor = System.Drawing.Color.Coral;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(934, 112);
-            this.panel1.TabIndex = 19;
             // 
             // firstNameLbl
             // 
@@ -259,6 +249,16 @@
             this.label4.Size = new System.Drawing.Size(153, 31);
             this.label4.TabIndex = 37;
             this.label4.Text = "> add Patient";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.ForeColor = System.Drawing.Color.Coral;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(934, 112);
+            this.panel1.TabIndex = 19;
             // 
             // AddPatient
             // 

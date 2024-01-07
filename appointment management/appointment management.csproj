@@ -58,6 +58,18 @@
     <Compile Include="AddPatient.Designer.cs">
       <DependentUpon>AddPatient.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentDetailsForm.Designer.cs">
+      <DependentUpon>AppointmentDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="appointmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="appointmentForm.Designer.cs">
+      <DependentUpon>appointmentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs" />
     <Compile Include="AppointmentConfirmation.cs" />
     <Compile Include="HomeDoctor.cs">
@@ -113,6 +125,12 @@
     </Compile>
     <EmbeddedResource Include="AddPatient.resx">
       <DependentUpon>AddPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentDetailsForm.resx">
+      <DependentUpon>AppointmentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="appointmentForm.resx">
+      <DependentUpon>appointmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HomeDoctor.resx">
       <DependentUpon>HomeDoctor.cs</DependentUpon>

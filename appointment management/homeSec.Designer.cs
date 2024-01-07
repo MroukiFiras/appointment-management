@@ -33,9 +33,10 @@
             this.patientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPatientTool = new System.Windows.Forms.ToolStripMenuItem();
             this.listePatientTool = new System.Windows.Forms.ToolStripMenuItem();
-            this.label3 = new System.Windows.Forms.Label();
+            this.appToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutTool = new System.Windows.Forms.ToolStripMenuItem();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +56,8 @@
             // 
             this.patientToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewPatientTool,
-            this.listePatientTool});
+            this.listePatientTool,
+            this.appToolStripMenuItem});
             this.patientToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.patientToolStripMenuItem.Name = "patientToolStripMenuItem";
             this.patientToolStripMenuItem.Size = new System.Drawing.Size(96, 32);
@@ -65,7 +67,7 @@
             // 
             this.addNewPatientTool.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewPatientTool.Name = "addNewPatientTool";
-            this.addNewPatientTool.Size = new System.Drawing.Size(224, 28);
+            this.addNewPatientTool.Size = new System.Drawing.Size(224, 32);
             this.addNewPatientTool.Text = "Add New Patient";
             this.addNewPatientTool.Click += new System.EventHandler(this.addNewPatientTool_Click);
             // 
@@ -73,21 +75,17 @@
             // 
             this.listePatientTool.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listePatientTool.Name = "listePatientTool";
-            this.listePatientTool.Size = new System.Drawing.Size(224, 28);
+            this.listePatientTool.Size = new System.Drawing.Size(224, 32);
             this.listePatientTool.Text = "Liste Patient";
             this.listePatientTool.Click += new System.EventHandler(this.listePatientTool_Click);
             // 
-            // label3
+            // appToolStripMenuItem
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(203, 432);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(366, 18);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "Copyright © 2023 . All Rights Reserved By FRISTO GROUP";
+            this.appToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.appToolStripMenuItem.Name = "appToolStripMenuItem";
+            this.appToolStripMenuItem.Size = new System.Drawing.Size(224, 28);
+            this.appToolStripMenuItem.Text = "Appointment ";
+            this.appToolStripMenuItem.Click += new System.EventHandler(this.appToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -103,9 +101,21 @@
             this.logoutTool.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logoutTool.Image = ((System.Drawing.Image)(resources.GetObject("logoutTool.Image")));
             this.logoutTool.Name = "logoutTool";
-            this.logoutTool.Size = new System.Drawing.Size(224, 28);
+            this.logoutTool.Size = new System.Drawing.Size(146, 28);
             this.logoutTool.Text = "Logout";
             this.logoutTool.Click += new System.EventHandler(this.logoutTool_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(203, 432);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(366, 18);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Copyright © 2023 . All Rights Reserved By FRISTO GROUP";
             // 
             // homeSec
             // 
@@ -136,5 +146,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutTool;
+        private System.Windows.Forms.ToolStripMenuItem appToolStripMenuItem;
     }
 }

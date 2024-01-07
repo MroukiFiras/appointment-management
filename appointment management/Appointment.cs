@@ -16,6 +16,8 @@ namespace appointment_management
             AppointmentId = appointmentId;
             AppointmentDateTime = appointmentDateTime;
             Patient = patient;
+
+
         }
     }
 }

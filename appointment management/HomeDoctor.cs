@@ -44,5 +44,12 @@ namespace appointment_management
             newPatientList.Show();
             this.Hide();
         }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+            type typeForm = new type();
+            typeForm.Show();
+            this.Close();
+        }
     }
 }

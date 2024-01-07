@@ -44,6 +44,7 @@ namespace appointment_management
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblLogout = new System.Windows.Forms.Label();
             this.grpBoxNbreOfPatientsToday.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -185,11 +186,24 @@ namespace appointment_management
             this.label3.TabIndex = 37;
             this.label3.Text = "Copyright © 2023 . All Rights Reserved By FRISTO GROUP";
             // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblLogout.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.Location = new System.Drawing.Point(710, 24);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(78, 28);
+            this.lblLogout.TabIndex = 5;
+            this.lblLogout.Text = "Logout";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
             // HomeDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblLogout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grpBoxNbreOfPatientsToday);
@@ -227,5 +241,6 @@ namespace appointment_management
         private Panel panel1;
         private Label label3;
         private Label label5;
+        private Label lblLogout;
     }
 }
